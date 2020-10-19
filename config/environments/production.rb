@@ -110,9 +110,9 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  config.action_mailer.default_url_options{host: 'enigmatic-beyond-36115.herokuapp.com'}
+  config.action_mailer.default_url_options = { host: 'enigmatic-beyond-36115.herokuapp.com'}
   ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smpt_settings = {
+  ActionMailer::Base.smtp_settings = {
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWORD'],
     domain: "heroku.com",
